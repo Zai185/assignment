@@ -1,0 +1,142 @@
+* {
+    transition: all 500ms;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 400px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-inner {
+    position: relative;
+}
+
+.carousel-self-textbox {
+    width: 65%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 10px solid #fff;
+    top: 50%;
+    left: 50%;
+}
+
+.library-section {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+    padding: 1rem 3%;
+    /* background-color: black; */
+}
+
+.book-showcase {
+    position: relative;
+    width: 20%;
+    max-width: 160px;
+    min-width: 80px;
+    padding: 0 !important;
+    margin: 5px;
+}
+
+.book-img {
+
+    transition: 2s;
+}
+
+.book-textbox {
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 33%, rgba(0, 0, 0, 0.8) 66%, rgba(0, 0, 0, 0.6) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    user-select: none;
+    font-weight: bold;
+    opacity: 0;
+}
+
+.book-textbox h6:first-of-type::before {
+    content: open-quote;
+}
+
+.book-textbox h6:first-of-type::after {
+    content: close-quote;
+}
+
+.book-textbox h6:last-of-type {
+    text-decoration: underline;
+}
+
+.book-showcase:hover .book-textbox {
+    opacity: 1;
+}
+
+.book-showcase:hover .book-img {
+    filter: saturate(30%);
+}
+
+.navbar-collapse {
+    color: black !important;
+    font-weight: 500 !important;
+    font-size: 1.2rem !important;
+}
+
+.row {
+    --bs-gutter-x: 0rem;
+}
+
+.carousel-bg-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 992px){
+    .carousel-self-textbox.two div h1{
+        font-size: 25px;
+    }
+    .carousel-self-textbox.two div p{
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-self-textbox h1{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-self-textbox h1{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 425px) {
+    .carousel-self-textbox h1{
+        font-size: 1.6rem;
+    }
+    .carousel-self-textbox p{
+        font-size: 13px;
+    }
+    
+}
