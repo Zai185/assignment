@@ -14,7 +14,7 @@ if (!isset($_SESSION)) {
     <title>Multi Library</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
@@ -24,7 +24,7 @@ if (!isset($_SESSION)) {
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Navbar</a>
+            <a class="navbar-brand" href="index.php"><i class="bi bi-book me-1"></i>Multi-Library</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -39,15 +39,16 @@ if (!isset($_SESSION)) {
                     <li class="nav-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <a class="nav-link" style="cursor: pointer">Log Out</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="book_create.php" class="nav-link btn">Add Book</a>
-                    </li>
                 </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-4">
-                    <li class="nav-item btn btn-primary rounded-pill">
-                        <i class="bi bi-person-circle"></i><a class="text-white" style="text-decoration: none;"
-                            href="index.php">
-                            <?php echo $_SESSION['uid'] ?>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-2">
+                    <li class="nav-item">
+                        <a href="book_create.php" class="btn btn-info rounded-pill my-auto"><i
+                                class="bi bi-plus-circle me-1"></i>Add Book</a>
+                    </li>
+                    <li class="nav-item user-item me-2">
+                        <a class="btn btn-primary rounded-pill">
+                            <i class="bi bi-person-circle">
+                                <?php echo $_SESSION['uid'] ?></i>
                         </a>
                     </li>
                     <?php else: ?>

@@ -111,32 +111,41 @@
     background-position: center;
 }
 
-@media (max-width: 992px){
-    .carousel-self-textbox.two div h1{
+@media (max-width: 992px) {
+    .carousel-self-textbox.two div h1 {
         font-size: 25px;
     }
-    .carousel-self-textbox.two div p{
+
+    .carousel-self-textbox.two div p {
         font-size: 13px;
+    }
+
+    .user-item {
+        position: absolute;
+        top: 25%;
+        right: 10%;
     }
 }
 
 @media (max-width: 768px) {
-    .carousel-self-textbox h1{
+    .carousel-self-textbox h1 {
         font-size: 1.5rem;
     }
 }
 
 @media (max-width: 576px) {
-    .carousel-self-textbox h1{
+    .carousel-self-textbox h1 {
         font-size: 1rem;
     }
 }
+
 @media (max-width: 425px) {
-    .carousel-self-textbox h1{
+    .carousel-self-textbox h1 {
         font-size: 1.6rem;
     }
-    .carousel-self-textbox p{
+
+    .carousel-self-textbox p {
         font-size: 13px;
     }
-    
+
 }
