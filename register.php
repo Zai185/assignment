@@ -4,13 +4,14 @@ include 'connection.php';
 if (isset($_POST['register'])) {
     $uid = trim(addslashes($_POST['uid']));
     $email = $_POST['email'];
-    $pwd = trim(($_POST['pwd']));
+    $pwd = trim($_POST['pwd']);
     $error = [];
 
     empty($uid) ? $error[] = "Username is required" : "";
     empty($email) ? $error[] = "Email is required" : "";
     empty($pwd) ? $error[] = "Password is required" : "";
     if (!$error) {
+        $pwd = md5($pwd);
         $existQuery = "SELECT * FROM users WHERE email='$email'";
         $existResult = mysqli_query($conn, $existQuery);
         if (mysqli_num_rows($existResult) > 0) {
@@ -19,7 +20,7 @@ if (isset($_POST['register'])) {
             $query = "INSERT INTO users(uid, email, pwd) VALUES ('$uid', '$email','$pwd'); SET @a = 0; UPDATE users SET id = @a := @a +1 ORDER BY id";
             $result = mysqli_multi_query($conn, $query);
             if($result){
-                header("location: index.php");
+                header("location: login.php");
             } else{
                 echo mysqli_connect_error();
             }
