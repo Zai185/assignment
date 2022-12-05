@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+$id = $_GET['id'];
+$query = "SELECT * FROM books WHERE id='$id'";
+$result = mysqli_query($conn, $query);
+if(!$result){
+    mysqli_connect_error();
+}
 ?>
 
 
