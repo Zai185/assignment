@@ -73,17 +73,18 @@ $result = mysqli_query($conn, $query);
             <img class="book-img" src="<?php echo $book['cover'] ?>" alt=""
                 style="object-fit: contain; width: 100%; height: 100%;">
             <div class="book-textbox text-white text-bold text-center">
-                <h6>
-                    <?php echo $book['title']; ?>
-                </h6>
-                <h6>By</h6>
-                <h6>
-                    <?php echo $book['author']; ?>
-                </h6>
+                <a href="book_view.php?id=<?php echo $book['id']?>" style="color: white; text-decoration: none;">
+                    <h6>
+                        <?php echo $book['title']; ?>
+                    </h6>
+                    <h6>By</h6>
+                    <h6>
+                        <?php echo $book['author']; ?>
+                    </h6>
+                </a>
             </div>
         </div>
         <?php endforeach; ?>
     </div>
 </section>
-
 <?php include 'layout/footer.php'; ?>
