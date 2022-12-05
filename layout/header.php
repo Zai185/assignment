@@ -40,12 +40,12 @@ if (!isset($_SESSION)) {
                         <a class="nav-link" style="cursor: pointer">Log Out</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-2">
-                    <li class="nav-item">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-1">
                         <a href="book_create.php" class="btn btn-info rounded-pill my-auto"><i
                                 class="bi bi-plus-circle me-1"></i>Add Book</a>
                     </li>
-                    <li class="nav-item user-item me-2">
+                    <li class="nav-item user-item mx-1">
                         <a class="btn btn-primary rounded-pill">
                             <i class="bi bi-person-circle">
                                 <?php echo $_SESSION['uid'] ?></i>
