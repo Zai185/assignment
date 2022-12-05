@@ -28,7 +28,7 @@ if ($result) {
         <p class="card-text" style="height: 300px;overflow: scroll;">
             <?php echo $about ?>
         </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="index.php" class="btn btn-primary">Back to Main</a>
     </div>
 </div>
 
