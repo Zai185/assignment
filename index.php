@@ -24,12 +24,12 @@ $result = mysqli_query($conn, $query);
                     <a class="nav-link" style="cursor: pointer">Log Out</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav account-setting ms-auto mb-2 mb-lg-0">
                 <li class="nav-item mx-1">
-                    <a href="uploader-book.php?e=<?php echo $_SESSION['email'] ?>" class="btn btn-info rounded-pill my-auto"><i
+                    <a href="uploader-book.php?e=<?php echo $_SESSION['email'] ?>" class="btn btn-info rounded-pill"><i
                             class="bi bi-plus-circle me-1"></i>My Book</a>
                 </li>
-                <li class="nav-item user-item mx-1">
+                <li class="nav-item mx-1">
                     <a class="btn btn-primary rounded-pill">
                         <i class="bi bi-person-circle">
                             <?php echo $_SESSION['uid'] ?>
@@ -135,12 +135,12 @@ $result = mysqli_query($conn, $query);
 
 <section class="library-section">
     <h1 class="text-center my-4">WELCOME TO THE LIBRARY, READERS!</h1>
-    <div class="row row-cols-3">
+    <div class="row row-cols-auto row-cols-sm-2">
         <?php foreach ($result as $book): ?>
         <div class="book-showcase col">
             <img class="book-img" src="<?php echo $book['cover'] ?>" alt=""
-                style="object-fit: contain; width: 100%; height: 100%; min-width: 120px;">
-            <div class="book-textbox text-white text-bold text-center" style="min-width: 120px;">
+                style="object-fit: contain; width: 100%; height: 100%;">
+            <div class="book-textbox text-white text-bold text-center" style="width: 100%;">
                 <a href="book_view.php?id=<?php echo $book['id'] ?>" style="color: white; text-decoration: none;">
                     <h6>
                         <?php echo $book['title']; ?>

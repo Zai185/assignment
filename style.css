@@ -50,10 +50,11 @@ form {
 .book-showcase {
     position: relative;
     width: 20%;
+    height: 170px;
     max-width: 160px;
-    min-width: 80px;
+    min-width: 95px;
     padding: 0 !important;
-    margin: 5px;
+    margin: 5px 10px;
 }
 
 .book-img {
@@ -62,7 +63,6 @@ form {
 
 .book-textbox {
     width: 100%;
-    min-width: 120px;
     height: 100%;
     background: rgb(0, 0, 0);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 33%, rgba(0, 0, 0, 0.8) 66%, rgba(0, 0, 0, 0.6) 100%);
@@ -120,15 +120,11 @@ form {
     .carousel-self-textbox.two div h1 {
         font-size: 25px;
     }
-
     .carousel-self-textbox.two div p {
         font-size: 13px;
     }
-
-    .user-item {
-        position: absolute;
-        top: 5%;
-        left: 18%;
+    .navbar-nav.account-setting{
+        flex-direction: row;
     }
 }
 
