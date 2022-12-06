@@ -26,7 +26,7 @@ if ($result) {
             <?php echo $author ?>
         </h5>
 
-        <p class="card-text" style="height: 300px;overflow: scroll;">
+        <p class="card-text" style="height: 300px;overflow-y: scroll;">
             <?php echo $about ?>
         </p>
         <a href="index.php" class="btn btn-primary">Back to Main</a>
