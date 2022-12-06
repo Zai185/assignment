@@ -24,8 +24,8 @@ if (isset($_POST['create_book'])) {
         move_uploaded_file($cover['tmp_name'], $cover_path);
         move_uploaded_file($pdf['tmp_name'], $pdf_path);
         $userEmail = $_SESSION['email'];
-        $query = "INSERT INTO books (title, author, published_at, about, cover, pdf, uploader) VALUES ('$title', '$author','$published_at', '$about', '$cover_path','$pdf_path','$userEmail')";
-        $result = mysqli_query($conn, $query);
+        $query = "INSERT INTO books (title, author, published_at, about, cover, pdf, uploader) VALUES ('$title', '$author','$published_at', '$about', '$cover_path','$pdf_path','$userEmail'); SET @a = 0; UPDATE books SET id = @a := @a +1 ORDER BY id";
+        $result = mysqli_multi_query($conn, $query);
         if ($result) {
             header("location: index.php");
         } else {
