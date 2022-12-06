@@ -12,7 +12,9 @@ $noOfBook = mysqli_num_rows($result);
         <h1 class='text-center'>You Don't Have Any Book Uploaded</h1>
     <?php else: ?>
         <h1 style="text-decoration: underline;">Your Book Information</h1>
-            <div class="row row-cols-4">
+        <a href="book_create.php" class="btn btn-primary rounded-pill me-1"><i class="bi bi-plus-circle me-1"></i>Add New Book</a>
+        <a href="index.php" class="btn btn-primary rounded-pill"><i class="bi bi-house me-1"></i>Back to Home</a>
+            <div class="row row-cols-4 mt-3">
                 <?php foreach ($result as $book): ?>
                     <div class="book-showcase col">
                     <img class="book-img" src="<?php echo $book['cover'] ?>" alt=""
@@ -32,7 +34,6 @@ $noOfBook = mysqli_num_rows($result);
                 <?php endforeach; ?>
             </div>
     <?php endif; ?> 
-    <button class="btn btn-primary rounded-pill"><a href="index.php" style="text-decoration: none; color: #fff;" >Back to Home</a></button>
 </section>
 
 
