@@ -8,6 +8,7 @@ if (isset($_POST['create_book'])) {
     $published_at = trim($_POST['published_at']);
     $about = trim(addslashes($_POST['about']));
     $cover = $_FILES['cover'];
+
     $error = [];
 
     empty($title) ? $error[] = "Book title is required" : "";
@@ -60,6 +61,10 @@ if (isset($_POST['create_book'])) {
     </div>
     <div class="mb-3">
         <label>Book Cover: </label>
+        <input type="file" class="form-control" name="cover">
+    </div>
+    <div class="mb-3">
+        <label>Book PDF: </label>
         <input type="file" class="form-control" name="cover">
     </div>
     <div>
