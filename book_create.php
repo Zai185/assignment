@@ -20,8 +20,9 @@ if (isset($_POST['create_book'])) {
 
     if (!$error) {
         $cover_path = "img/" . $cover['name'];
-        move_uploaded_file($cover['tmp_name'], $cover_path);
         $pdf_path = "pdf/" . $pdf['name'];
+        move_uploaded_file($cover['tmp_name'], $cover_path);
+        move_uploaded_file($pdf['tmp_name'], $pdf_path);
         $userEmail = $_SESSION['email'];
         $query = "INSERT INTO books (title, author, published_at, about, cover, pdf, uploader) VALUES ('$title', '$author','$published_at', '$about', '$cover_path','$pdf_path','$userEmail')";
         $result = mysqli_query($conn, $query);
