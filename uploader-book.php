@@ -18,7 +18,7 @@ $noOfBook = mysqli_num_rows($result);
                 <?php foreach ($result as $book): ?>
                     <div class="book-showcase col">
                     <img class="book-img" src="<?php echo $book['cover'] ?>" alt=""
-                        style="object-fit: contain; width: 100%; height: 100%;">
+                        style="object-fit: contain; width: 100%; height: 100%; min-width: 120px; ">
                     <div class="book-textbox text-white text-bold text-center">
                         <a href="book_view.php?id=<?php echo $book['id'] ?>" style="color: white; text-decoration: none;">
                             <h6>
