@@ -138,12 +138,12 @@ $result = mysqli_query($conn, $query);
 
 <section class="library-section">
     <h1 class="text-center my-4">WELCOME TO THE LIBRARY, READERS!</h1>
-    <div class="row row-cols-4">
+    <div class="row row-cols-3">
         <?php foreach ($result as $book): ?>
         <div class="book-showcase col">
             <img class="book-img" src="<?php echo $book['cover'] ?>" alt=""
-                style="object-fit: contain; width: 100%; height: 100%;">
-            <div class="book-textbox text-white text-bold text-center">
+                style="object-fit: contain; width: 100%; height: 100%; min-width: 120px;">
+            <div class="book-textbox text-white text-bold text-center" style="min-width: 120px;">
                 <a href="book_view.php?id=<?php echo $book['id'] ?>" style="color: white; text-decoration: none;">
                     <h6>
                         <?php echo $book['title']; ?>
