@@ -11,6 +11,7 @@ if ($result) {
     $about = $book['about'];
     $cover = $book['cover'];
     $pdf = $book['pdf'];
+    $uploader = $book['uploader'];
 } else {
     echo mysqli_connect_error();
 }
@@ -32,8 +33,10 @@ if ($result) {
         </p>
         <a href="index.php" class="btn btn-primary">Back to Main</a>
         <a href="<?php echo $pdf ?>" class="btn btn-primary" download="<?php echo $title ?>">Download</a>
+        <?php if(isset($_SESSION['auth']) and $uploader == $_SESSION['email']): ?>
         <a href="book_edit.php?id=<?php echo $id ?>" class="btn btn-info">Edit</a>
         <a href="book_delete.php?id=<?php echo $id ?>" class="btn btn-danger">Delete</a>
+        <?php endif; ?>
     </div>
 </div>
 
