@@ -8,7 +8,7 @@ if (isset($_POST['create_book'])) {
     $published_at = trim($_POST['published_at']);
     $about = trim(addslashes($_POST['about']));
     $cover = $_FILES['cover'];
-
+    $pdf = $_FILES['bookPDF'];
     $error = [];
 
     empty($title) ? $error[] = "Book title is required" : "";
@@ -16,16 +16,18 @@ if (isset($_POST['create_book'])) {
     empty($published_at) ? $error[] = "Published date is required" : "";
     empty($about) ? $error[] = "Book Description(About) is required" : "";
     !is_uploaded_file($cover['tmp_name']) ? $error[] = "Book Cover is required" : "";
+    !is_uploaded_file($pdf['tmp_name']) ? $error[] = "Book PDF file is required" : "";
 
     if (!$error) {
-        $cover_path = "img/".$cover['name'];
+        $cover_path = "img/" . $cover['name'];
         move_uploaded_file($cover['tmp_name'], $cover_path);
+        $pdf_path = "pdf/" . $pdf['name'];
         $userEmail = $_SESSION['email'];
-        $query = "INSERT INTO books (title, author, published_at, about, cover, uploader) VALUES ('$title', '$author','$published_at', '$about', '$cover_path','$userEmail')";
+        $query = "INSERT INTO books (title, author, published_at, about, cover, pdf, uploader) VALUES ('$title', '$author','$published_at', '$about', '$cover_path','$pdf_path','$userEmail')";
         $result = mysqli_query($conn, $query);
-        if($result){
+        if ($result) {
             header("location: index.php");
-        } else{
+        } else {
             echo mysqli_connect_error();
         }
     }
@@ -61,11 +63,11 @@ if (isset($_POST['create_book'])) {
     </div>
     <div class="mb-3">
         <label>Book Cover: </label>
-        <input type="file" class="form-control" name="cover">
+        <input type="file" class="form-control" name="cover" accept="image/*">
     </div>
     <div class="mb-3">
         <label>Book PDF: </label>
-        <input type="file" class="form-control" name="cover">
+        <input type="file" class="form-control" name="bookPDF" accept=".pdf">
     </div>
     <div>
         <button type="submit" name="create_book" class="btn btn-primary mt-3">Create</button>
@@ -73,4 +75,3 @@ if (isset($_POST['create_book'])) {
 </form>
 
 <?php include 'layout/footer.php'; ?>
-
