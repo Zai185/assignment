@@ -145,8 +145,8 @@ $result = mysqli_query($conn, $query);
                     <h6>
                         <?php echo $book['title']; ?>
                     </h6>
-                    <h6>By</h6>
-                    <h6>
+                    <h6 class="off-at-sm">By</h6>
+                    <h6 class="off-at-sm">
                         <?php echo $book['author']; ?>
                     </h6>
                 </a>

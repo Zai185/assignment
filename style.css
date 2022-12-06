@@ -149,4 +149,8 @@ form {
         font-size: 13px;
     }
 
+    .book-textbox .off-at-sm{
+        display: none;
+    }
+
 }
