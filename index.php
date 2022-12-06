@@ -52,9 +52,6 @@ $result = mysqli_query($conn, $query);
     </div>
 </nav>
 
-<!-- modal  -->
-<!-- Button trigger modal -->
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
