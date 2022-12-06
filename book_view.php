@@ -10,6 +10,7 @@ if ($result) {
     $author = $book['author'];
     $about = $book['about'];
     $cover = $book['cover'];
+    $pdf = $book['pdf'];
 }
 ?>
 
@@ -29,6 +30,7 @@ if ($result) {
             <?php echo $about ?>
         </p>
         <a href="index.php" class="btn btn-primary">Back to Main</a>
+        <a href="<?php echo $pdf ?>" class="btn btn-primary" download="<?php echo $title?>">Download</a>
     </div>
 </div>
 
