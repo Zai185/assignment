@@ -45,7 +45,7 @@ if (isset($_POST['create_book'])) {
 <?php include 'layout/header.php'; ?>
 <h1>Add New Book</h1>
 <?php include 'layout/error.php'; ?>
-<form action="" method="post" class="ms-5" style="width: 600px;" enctype="multipart/form-data">
+<form action="" method="post" class="ms-5 me-3" enctype="multipart/form-data">
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="floatingInput" placeholder="title" name="title">
         <label>Book Title</label>
