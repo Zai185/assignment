@@ -70,8 +70,9 @@ if (isset($_POST['create_book'])) {
         <label>Book PDF: </label>
         <input type="file" class="form-control" name="bookPDF" accept=".pdf">
     </div>
-    <div>
-        <button type="submit" name="create_book" class="btn btn-primary mt-3">Create</button>
+    <div class="mt-3">
+        <button type="submit" name="create_book" class="btn btn-primary">Create</button>
+        <a href="index.php" class="btn btn-primary mx-1">Cancel</a>
     </div>
 </form>
 

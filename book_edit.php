@@ -68,7 +68,7 @@ if ($result) {
 
 <h1>Edit Book</h1>
 <?php include 'layout/error.php'; ?>
-<form action="" method="post" class="ms-5" style="width: 600px;" enctype="multipart/form-data">
+<form action="" method="post" class="ms-5" enctype="multipart/form-data">
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="floatingInput" placeholder="title" name="title"
             value="<?= $title ?>">
@@ -97,8 +97,9 @@ if ($result) {
         <label>Book PDF: </label>
         <input type="file" class="form-control" name="bookPDF" accept=".pdf">
     </div>
-    <div>
-        <button type="submit" name="edit_book" class="btn btn-primary mt-3">Edit</button>
+    <div class="mt-2">
+        <button type="submit" name="edit_book" class="btn btn-primary">Edit</button>
+        <a href="index.php" class="btn btn-primary mx-1">Back to Home</a>
     </div>
 </form>
 

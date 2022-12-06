@@ -31,12 +31,14 @@ if ($result) {
         <p class="card-text" style="height: 300px;overflow-y: scroll;">
             <?php echo $about ?>
         </p>
-        <a href="index.php" class="btn btn-primary">Back to Main</a>
-        <a href="<?php echo $pdf ?>" class="btn btn-primary" download="<?php echo $title ?>">Download</a>
-        <?php if(isset($_SESSION['auth']) and $uploader == $_SESSION['email']): ?>
-        <a href="book_edit.php?id=<?php echo $id ?>" class="btn btn-info">Edit</a>
-        <a href="book_delete.php?id=<?php echo $id ?>" class="btn btn-danger">Delete</a>
+        <?php if (isset($_SESSION['auth']) and $uploader == $_SESSION['email']): ?>
+        <a href="book_edit.php?id=<?php echo $id ?>" class="btn btn-info"><i class="bi bi-pencil-square me-1"></i>Edit</a>
+        <a href="book_delete.php?id=<?php echo $id ?>" class="btn btn-danger"><i class="bi bi-trash-fill me-1"></i>Delete</a>
         <?php endif; ?>
+        <div class="my-1">
+            <a href="index.php" class="btn btn-primary">Back to Main</a>
+            <a href="<?php echo $pdf ?>" class="btn btn-primary" download="<?php echo $title ?>"><i class="bi bi-download me-1"></i>Download</a>
+        </div>
     </div>
 </div>
 
