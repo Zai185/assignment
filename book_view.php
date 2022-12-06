@@ -32,6 +32,7 @@ if ($result) {
         </p>
         <a href="index.php" class="btn btn-primary">Back to Main</a>
         <a href="<?php echo $pdf ?>" class="btn btn-primary" download="<?php echo $title ?>">Download</a>
+        <a href="book_edit.php?id=<?php echo $id ?>" class="btn btn-info">Edit</a>
         <a href="book_delete.php?id=<?php echo $id ?>" class="btn btn-danger">Delete</a>
     </div>
 </div>
